@@ -28,3 +28,8 @@ class BookmarkUpdateView(generic.UpdateView):
     model = Bookmark
     fields = ['site_name', 'url']
     template_name_suffix = '_update'
+
+
+class BookmarkDeleteView(generic.DeleteView):
+    model = Bookmark
+    success_url = reverse_lazy('list')
