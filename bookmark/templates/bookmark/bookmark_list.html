@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-    <div class=""btn-group>
-        <a href="#" class="btn btn-info">Add Bookmark</a>
+    <div class="btn-group">
+        <a href="{% url 'add' %}" class="btn btn-info">Add Bookmark</a>
     </div>
     <p></p>
     <table class="table">
@@ -20,6 +20,7 @@
             </tr>
         </thead>
         <tbody>
+<!--        genericView애서 모댈의 오브젝트가 여러개일때 object_list 변수로 전달함.-->
             {% for bookmark in object_list %}
                 <tr>
                     <td>{{forloop.counter}}</td>
