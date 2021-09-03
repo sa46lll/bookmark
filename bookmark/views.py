@@ -7,9 +7,9 @@ from django.views import generic
 from bookmark.models import Bookmark
 
 
-class BookmarkListView(generic.ListView):
+class BookmarkListView(generic.ListView):  # 템플릿 속성이 없을때, '객체이름_list.html' 템플릿을 보여줌.
     model = Bookmark
-    # 템플릿 속성이 없을때, '객체이름_list.html' 템플릿을 보여줌.
+    paginate_by = 6  # 한페이지에 6개씩 출력함.
 
 
 class BookmarkCreateView(generic.CreateView):
